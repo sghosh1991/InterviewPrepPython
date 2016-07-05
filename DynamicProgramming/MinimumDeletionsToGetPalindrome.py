@@ -17,7 +17,7 @@ def minCharactersToDelete(s,tab):
     
     print "\t"*tab + "Called with :  " + s
     
-    if len(s) == 1:
+    if len(s) == 1 or len(s)==0:
         
         return 0
     
