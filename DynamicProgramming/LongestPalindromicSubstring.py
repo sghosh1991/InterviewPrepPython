@@ -42,11 +42,10 @@ def longestPalindromicSubstring_Helper(s,tab):
             including_left_char = 0
             including_right_char = 0
             including_left_char,lps_left_char = longestPalindromicSubstring_Helper(s[0:-1], tab+1)
-            including_right_char,lps_right_char = longestPalindromicSubsequence_Helper(s[1:], tab+1)
+            including_right_char,lps_right_char = longestPalindromicSubstring_Helper(s[1:], tab+1)
             (longest_substr_len,lps) = (including_left_char,lps_left_char) if including_left_char > including_right_char else (including_right_char,lps_right_char)
     print " "*tab +str(tab)+ "Longest palindromic subsequence for " + s + " "+ str(longest_substr_len) + " LPS: " + lps
     return (longest_substr_len,lps)
 
 if __name__ == "__main__":
-    
-    longestPalindromicSubsequence_Helper("abbaxabbmb", 0)
+    longestPalindromicSubstring_Helper("abbaxabbmb", 0)
